@@ -1,0 +1,39 @@
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+                    "header header"
+                    "input output";
+}
+
+.container {
+  padding: 20px;
+}
+
+.output-box {
+  grid-area: output;
+  background-color: bisque;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.input-box {
+  grid-area: input;
+  background-color: coral;
+}
+
+.header {
+  grid-area: header;
+  background-color: darkgrey;
+}
+
+.preview-box {
+  background-color: blueviolet;
+}
+
+.code-box {
+  background-color: darkcyan;
+}
