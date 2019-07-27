@@ -9,29 +9,35 @@ class App extends Component {
   calculateGap = (stripe, ad, count) => {
     return parseInt(( stripe - ( ad * count ) ) / 2);
   }
+  updateStripeData = (e) => {
+    e.preventDefault();
+    let newVal = e.currentTarget.value;
+    let newValClean;
+    isNaN(newVal) ? newValClean = newVal : newValClean = parseInt(newVal);
+    const propertyToChange = e.currentTarget.name;
+    this.setState({[propertyToChange]: newValClean});
+  }
   state = {
     stripes: [],
-    stripeData: {
-      stripeWidth: 600,
-      stripeItemWidth: 190,
-      stripeItemHeight: 240,
-      stripeItemImageWidth: 190,
-      stripeItemImageHeight: 158,
-      backgroundColor: "#ffffff",
-      imagePlacement: "t",
-      adCount: 3,
-      stripeID: null,
-      containerID: null
-    }
+    stripeWidth: 600,
+    stripeItemWidth: 190,
+    stripeItemHeight: 240,
+    stripeItemImageWidth: 190,
+    stripeItemImageHeight: 158,
+    backgroundColor: "#ffffff",
+    imagePlacement: "t",
+    adCount: 3,
+    stripeID: null,
+    containerID: null
   }
   render() {
     console.log(this.state);
-    let stripeGapWidth = this.calculateGap(this.state.stripeData.stripeWidth, this.state.stripeData.stripeItemWidth, this.state.stripeData.adCount);
+    let stripeGapWidth = this.calculateGap(this.state.stripeWidth, this.state.stripeItemWidth, this.state.adCount);
     console.log(stripeGapWidth);
     return (
       <div className="App">
       <Header />
-      <InputBox details={this.state.stripeData} />
+      <InputBox details={this.state} handleChange={this.updateStripeData} />
       <OutputBox />
     </div>
     )
