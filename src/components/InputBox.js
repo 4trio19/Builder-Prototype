@@ -1,9 +1,9 @@
-import React from 'react'
-
-export default function InputBox() {
+import React from 'react';
+import StripeForm from './StripeForm';
+export default function InputBox(props) {
   return (
     <div className="input-box container">
-      Inputs Go Here
+      <StripeForm details={props.details} />
     </div>
   )
 }
