@@ -26,13 +26,14 @@ class App extends Component {
     stripeItemImageHeight: 158,
     backgroundColor: "#ffffff",
     imagePlacement: "t",
-    adCount: 3,
+    columns: 3,
+    rows: 1,
     stripeID: null,
     containerID: null
   }
   render() {
     console.log(this.state);
-    let stripeGapWidth = this.calculateGap(this.state.stripeWidth, this.state.stripeItemWidth, this.state.adCount);
+    let stripeGapWidth = this.calculateGap(this.state.stripeWidth, this.state.stripeItemWidth, this.state.columns);
     console.log(stripeGapWidth);
     return (
       <div className="App">

@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-rows: 60px 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   grid-template-areas: 
                     "header header"
                     "input output";
@@ -23,7 +23,7 @@
 
 .input-box {
   grid-area: input;
-  background-color: coral;
+  background-color: lightgray;
 }
 
 .header {
@@ -38,3 +38,25 @@
 .code-box {
   background-color: darkcyan;
 }
+input {
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 0.8rem;
+  width: 100%;
+  max-width: 200px;
+  box-sizing: border-box;
+}
+
+label {
+  font-size: 0.8rem;
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.responsive-btn {
+  width: 100%;
+}
+
