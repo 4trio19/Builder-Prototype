@@ -20,22 +20,29 @@ class App extends Component {
   }
   state = {
     stripes: [],
+    stripeType: "Email",
     stripeWidth: 600,
     stripeItemWidth: 190,
     stripeItemHeight: 240,
     stripeItemImageWidth: 190,
     stripeItemImageHeight: 158,
     backgroundColor: "#ffffff",
+    titleUnderline: false,
+    extraSpace: 0,
     imagePlacement: "t",
+    verticalTitleAlign: "middle",
     columns: 3,
     rows: 1,
+    stripeName: "",
     stripeID: null,
-    containerID: null
+    containerID: null,
+    esp: null,
+    domain: "stripe.rs-stripe.com",
+    imageFormat: "GIF",
+    contentRating: "G"
   }
   render() {
-    console.log(this.state);
     let stripeGapWidth = this.calculateGap(this.state.stripeWidth, this.state.stripeItemWidth, this.state.columns);
-    console.log(stripeGapWidth);
     return (
       <div className="App">
       <Header />

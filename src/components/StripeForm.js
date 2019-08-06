@@ -91,9 +91,9 @@ export default function StripeForm(props) {
             Extra Title Space:
           <Input name="extraSpace" className="form-control" type="number" placeholder="Extra Title Space" onChange={props.handleChange} />
           </label>
-          <label htmlFor="titleVerticalAlign">
+          <label htmlFor="verticalTitleAlign">
             Vertical Title Align:
-            <Select name="titleVerticalAlign" className="form-control" options={verticalAlignOptions} />
+            <Select name="verticalTitleAlign" className="form-control" options={verticalAlignOptions} />
           </label>
         </div>
         <hr/>
