@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import InputBox from './components/InputBox';
 import OutputBox from './components/OutputBox';
