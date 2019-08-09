@@ -47,7 +47,7 @@ class App extends Component {
       <div className="App">
       <Header />
       <InputBox details={this.state} handleChange={this.updateStripeData} />
-      <OutputBox />
+      <OutputBox details={this.state} />
     </div>
     )
   }
