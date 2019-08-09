@@ -18,7 +18,7 @@
   background-color: bisque;
   display: grid;
   grid-gap: 10px;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 400px 600px;
 }
 
 .input-box {
@@ -37,6 +37,8 @@
 
 .code-box {
   background-color: #fff;
+  overflow-y: scroll;
+  border: 1px #ddd solid;
 }
 
 label {
