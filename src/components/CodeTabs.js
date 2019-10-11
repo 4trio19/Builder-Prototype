@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import StripeTemplate from './StripeTemplate'
+import CodeBlock from '@tenon-io/tenon-codeblock';
 export default class CodeTabs extends Component {
   state = {
     tabIndex: 0
@@ -17,8 +18,25 @@ export default class CodeTabs extends Component {
     console.log(this.state.tabIndex);
   }
   render(props) {
-    console.log(props);
-    let toPrint = JSON.stringify(this.props.details, null, 2);
+    console.log(this.props);
+    let {...stripeDetails} = this.props.details;
+    delete stripeDetails.stripes;
+    delete stripeDetails.domain;
+    delete stripeDetails.esp;
+    delete stripeDetails.rows;
+    delete stripeDetails.stripeType;
+    delete stripeDetails.rows;
+    delete stripeDetails.stripeWidth;
+    delete stripeDetails.stripeID;
+    stripeDetails.articleCount = stripeDetails.columns;
+    delete stripeDetails.columns;
+    stripeDetails.isOpenRTB = false;
+    stripeDetails.dfpConfig = null;
+    let stripeOutput = {
+      id: this.props.details.stripeID,
+      stripe: {...stripeDetails}
+    };
+    let toPrint = JSON.stringify(stripeOutput, null, 2);
     return (
       <div>
         <div className="container">
@@ -36,14 +54,15 @@ export default class CodeTabs extends Component {
             <div className="card-body">
               {this.state.tabIndex === 0 ? (
                 <div>
-                  <pre>
-                    <code>
-                      {toPrint}
-                    </code>
-                  </pre>
+                  <CodeBlock
+                      codeString={toPrint}
+                      language="json"
+                  />                    
                 </div>
               ) : (
-                <div>HTML</div>
+                <div>
+                  <StripeTemplate details={this.props.details} />
+                </div>
               )
 
               }

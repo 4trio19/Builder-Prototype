@@ -63,3 +63,8 @@ label {
   margin-right: 10px;
   min-width: 200px;
 }
+
+.html-block {
+  display: block;
+  white-space: pre-line;
+}
