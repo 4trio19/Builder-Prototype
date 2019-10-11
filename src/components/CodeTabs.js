@@ -36,7 +36,6 @@ export default class CodeTabs extends Component {
             <div className="card-body">
               {this.state.tabIndex === 0 ? (
                 <div>
-                  <h4>Stripe JSON</h4>
                   <pre>
                     <code>
                       {toPrint}

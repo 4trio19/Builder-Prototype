@@ -48,7 +48,7 @@ export default function StripeForm(props) {
           </label>
           <label htmlFor="fontColor">
             Font Color:
-          <Input name="fontColor" className="form-control" type="number" onChange={props.handleChange} />
+          <Input name="fontColor" className="form-control" type="text" onChange={props.handleChange} />
           </label>
           <label htmlFor="titleAlign">
             Title Align:
@@ -57,13 +57,13 @@ export default function StripeForm(props) {
         </div>
         <hr/>
         <div className="form-group form-group-panels">
-          <label htmlFor="stripeItemWidth">
+          <label htmlFor="width">
             Stripe Item Width:
-          <Input name="stripeItemWidth" className="form-control" type="number" onChange={props.handleChange} />
+          <Input name="width" className="form-control" type="number" onChange={props.handleChange} />
           </label>
-          <label htmlFor="stripeItemHeight">
+          <label htmlFor="height">
             Stripe Item Height:
-          <Input name="stripeItemHeight" className="form-control" type="number" onChange={props.handleChange} />
+          <Input name="height" className="form-control" type="number" onChange={props.handleChange} />
           </label>
           <label htmlFor="backgroundColor">
             BG Color:
